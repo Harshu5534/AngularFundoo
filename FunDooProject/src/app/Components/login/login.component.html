@@ -1,0 +1,55 @@
+<div fxFlex=100 fxLayoutAlign="center center" style="border:1px solid black">
+    <mat-card fxFlex=50 fxLayout="row" fxLayoutAlign="center center">
+        <form fxFlex="row" [formGroup]="loginForm"(ngSubmit)="login()">
+            <div fxFlex=100 fxLayout="column">
+
+                <div style="text-align:center;">
+                    <h3 style="font-size: 30px; font-style: inherit">
+                        <span style="color: rgb(9, 137, 196)">F</span>
+                        <span style="color: rgb(216, 65, 65)">u</span>
+                        <span style="color: rgb(219, 154, 32)">n</span>
+                        <span style="color: rgb(209, 26, 117)">d</span>
+                        <span style="color: rgb(142, 151, 14)">o</span>
+                        <span style="color: rgb(39, 193, 78)">o</span>
+                        <span style="color: rgb(14, 197, 213)">N</span>
+                        <span style="color: rgb(203, 78, 15)">o</span>
+                        <span style="color: rgb(22, 111, 99)">t</span>
+                        <span style="color: rgb(102, 9, 164)">e</span>
+                    </h3>
+                </div>
+                <div style="text-align:center;margin-bottom: 20px;">
+                    <span style="font-size: 25px;">Sign in</span>
+                </div>
+
+                <div >
+                    <mat-form-field appearance="outline" style="padding-right: 10px">
+                        <mat-label>Email or phone</mat-label>
+                        <input matInput placeholder="Email or phone" formControlName="Emailorphone">
+                        <mat-error>Email or Phone Number is Required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="Password">
+                        <mat-error>Password is Required</mat-error>
+                    </mat-form-field>
+                    <div class="button"style="margin-top=10px">
+                        <button class="btn btn-secondary"routerLink="/ForgetPassword">Forget Password?</button>
+                    </div>
+                </div>
+                <div style="margin-top: 50px; padding-left: 5px;">
+                    <mat-hint>Not your computer? Use Guest mode to sign in privately.</mat-hint>
+                     <a href="https://support.google.com/accounts/answer/41078?hl=en&utm_source=google-account&utm_medium=home-support-panel"
+                        style="margin-top: 30px;margin-bottom: 20px;">Learn more</a>
+                </div>
+                <div>
+                    <div class="button">
+                        <button class="btn btn-secondary"routerLink="/Registration">Create account</button>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

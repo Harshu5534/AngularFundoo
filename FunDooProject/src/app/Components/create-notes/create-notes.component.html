@@ -1,0 +1,46 @@
+<div fxLayoutAlign="center center" class="container" fxLayoutGap="40px">
+    <form [formGroup]="createnoteForm" (ngSubmit)="onSubmit()">
+        <div>
+            <mat-card class="matcard-1" *ngIf="!show" (click)="onOpen()" style="height:50px;" fxLayout="row">
+                <div class="takenote" style="margin-left: 5px;" fxLayout="row">
+                    <input style="align-content: center;" placeholder="Take a note.." type="text"
+                        style="border:none; outline:none;font-weight:bold;font-size: 16px;" />
+                    <div class="imgtag" style="padding-left:200px;">
+                        <img src='../../../assets/check_box_FILL0_wght400_GRAD0_opsz48.svg'>
+                        <img src='../../../assets/brush_FILL0_wght400_GRAD0_opsz48.svg'>
+                        <img src='../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg'>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <mat-card class="matcard-2" *ngIf="show" Flex.sm fxFlex.xs>
+            <div fxLayout="row" fxLayoutAlign="space-between stretch">
+                <div fxLayout="column" fxLayoutAlign="space-between start">
+                    <div>
+                        <textarea class="titlebar-2" placeholder="Title" formControlName="title"
+                            style="border:none; outline:none;"></textarea>
+                        <button class="pinbutton" style="border: none;padding-left: 310px;"><img class="takenotepin"
+                                src='../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg'></button>
+                    </div>
+                    <textarea class="textarea" placeholder="Take a note..." formControlName="description"
+                        style="border:none;outline:none;"></textarea>
+                </div>
+            </div>
+            <div class="icons" fxLayout="row" style="margin-top: 15px;">
+
+                <img src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg">
+                <img src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
+                <img src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
+                <img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
+                <img src="../../../assets/archive_black_24dp.svg">
+                <img src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
+                <!-- <img src="../../../assets/undo_FILL0_wght400_GRAD0_opsz48.svg">
+                <img src="../../../assets/redo_FILL0_wght400_GRAD0_opsz48.svg"> -->
+
+                <div class="closebutton" fxLayout="row">
+                    <button class="close" mat-button (click)="onSubmit()">Close</button>
+                </div>
+            </div>
+        </mat-card>
+    </form>
+</div>
