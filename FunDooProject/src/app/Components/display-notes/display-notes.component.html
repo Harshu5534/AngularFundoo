@@ -1,4 +1,27 @@
-<mat-card class="Outerdiv" fxLayoutAlign="center center" *ngFor='let note of NoteArray'>
+<div class="display-note row">
+     <div *ngFor="let note of NoteArray" class="column">
+         <mat-card class="note-card " mat-dialog-container>
+             <mat-card-title class="note-title" (click)="openDialog(note)">
+                 {{note.title}}
+                 <button class="pinbutton">
+                    <img class="pin" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                </button>
+             </mat-card-title>
+             <mat-card-content class="note-description" (click)="openDialog(note)">
+                 <p>{{note.description}}</p>
+             </mat-card-content>
+             <mat-card-content>
+                <p>{{note.noteId}}</p>
+            </mat-card-content>
+             <mat-card-footer class="icons">
+               <app-icons></app-icons>      
+             </mat-card-footer>
+         </mat-card>
+     </div>
+ </div>
+
+
+<!-- <mat-card class="Outerdiv" fxLayoutAlign="center center" *ngFor='let note of NoteArray'>
    <div class="main"fxLayout="row">
         {{note.title}}
         {{note.description}}
@@ -6,4 +29,4 @@
    <div fxLayout="row" fxLayoutAlign="space-between center">
      <app-icons></app-icons>
  </div>
-</mat-card>
+</mat-card> -->

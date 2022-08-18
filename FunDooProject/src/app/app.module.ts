@@ -30,6 +30,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ArchivenotesComponent } from './Components/archivenotes/archivenotes.component';
 import { TrashnotesComponent } from './Components/trashnotes/trashnotes.component';
 import { UpdateComponent } from './Components/update/update.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { UpdateComponent } from './Components/update/update.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
     MatSnackBarModule
   ],
   providers: [

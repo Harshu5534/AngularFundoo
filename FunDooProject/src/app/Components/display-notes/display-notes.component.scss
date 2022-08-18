@@ -1,9 +1,69 @@
-.Outerdiv{ 
-    padding: 35px;
-   
-  }
+.display-note{
+  display: flex;
+  flex-flow: wrap;
+  position: absolute;
+  left: 10%;
+  width: 85%;
+  column-gap: 15px;
+  margin-top: 80px;
 
-.main{
-    width: 260px;
-    //border: 2px solid grey;
 }
+.pinbutton {
+  
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+img.pin {
+  height: 20px;
+  margin-left: 130px;
+  opacity: 0.7;
+  position: static;
+}
+
+// img.pin  {
+//   margin-left: 140px;
+//   margin-right: 1px;
+//   margin-top: 5%;
+//   opacity: 0.7;
+//   width: 25px;
+//   height: 25px;
+//   position: static;
+//   background: none;
+  
+
+// }
+
+.note-card {
+   overflow-wrap: break-word;
+   width: 200px;
+   height: auto;
+   min-height: 80px;
+   margin-top: 20px;
+   padding-bottom: 20px;
+}
+
+.note-title{
+  overflow-wrap: break-word;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.note-description{
+  overflow-wrap: break-word;
+  font-size: 15px;
+  padding-top: 10px;
+  min-height: 35px;
+  margin-bottom: 0px;
+}
+
+
+// .Outerdiv{ 
+//     padding: 35px;
+   
+//   }
+
+// .main{
+//     width: 260px;
+//     //border: 2px solid grey;
+// }

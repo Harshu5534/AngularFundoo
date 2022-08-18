@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef,OnDestroy} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   contentMargin = 200;
   mobileQuery: MediaQueryList;
 
-  constructor(media: MediaMatcher) { 
+  constructor(media: MediaMatcher,private route: Router) { 
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
 
@@ -24,6 +24,10 @@ export class DashboardComponent implements OnInit {
       else {
         this.contentMargin = 400;
       }
+    }
+    Logout() {
+      localStorage.removeItem('token');
+      this.route.navigateByUrl('/login');
     }
 
   ngOnInit(): void {
