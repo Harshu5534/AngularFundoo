@@ -1,11 +1,11 @@
 <div class="display-note row">
-     <div *ngFor="let note of NoteArray" class="column">
-         <mat-card class="note-card " mat-dialog-container>
+     <div *ngFor="let note of NoteArray | searchfilter : searchString " class="column">
+         <mat-card class="note-card " mat-dialog-container [style.background]="note.color">
              <mat-card-title class="note-title" (click)="openDialog(note)">
                  {{note.title}}
-                 <button class="pinbutton">
+                 <!-- <button class="pinbutton">
                     <img class="pin" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-                </button>
+                </button> -->
              </mat-card-title>
              <mat-card-content class="note-description" (click)="openDialog(note)">
                  <p>{{note.description}}</p>
@@ -14,9 +14,10 @@
                 <p>{{note.noteId}}</p>
             </mat-card-content>
              <mat-card-footer class="icons">
-               <app-icons></app-icons>      
+               <app-icons (messageTrashtoDisplay)="receivemessageTrashtoDisplay($event)"[noteobj]="note"(colornote)="getcolornote($event)"></app-icons>      
              </mat-card-footer>
          </mat-card>
+         
      </div>
  </div>
 

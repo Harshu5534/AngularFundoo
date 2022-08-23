@@ -1,5 +1,5 @@
-<app-create-notes></app-create-notes>
+<app-create-notes (messageEvent)="receiveMessage($event)"></app-create-notes>
 <div class="display">
-    <app-display-notes [NoteArray]="NotesList"></app-display-notes>
+    <app-display-notes (messageDisplaytoGetAllnotes)="receivemessageDisplaytoGetAllnotes($event)" (archivenote)="recieveArchiveNote($event)"[NoteArray]="NotesList"></app-display-notes>
 </div>
     

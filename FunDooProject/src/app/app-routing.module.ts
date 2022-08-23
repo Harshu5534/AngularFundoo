@@ -8,6 +8,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { ArchivenotesComponent } from './Components/archivenotes/archivenotes.component';
 
 const routes: Routes = [
   {path:'', redirectTo:"/login", pathMatch:'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   children:[
     { path:'', redirectTo:"note", pathMatch:'full' },
     { path:'note',component:GetAllNotesComponent},
+    { path:'archivenotes',component:ArchivenotesComponent}, 
   ]},
   { path:'icons',component:IconsComponent}
 ];

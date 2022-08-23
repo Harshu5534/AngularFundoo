@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./create-notes.component.scss']
 })
 export class CreateNotesComponent implements OnInit {
+  @Output() messageEvent = new EventEmitter<any>();
   show=false;
   createnoteForm!: FormGroup;
 
@@ -32,18 +33,19 @@ export class CreateNotesComponent implements OnInit {
       let reqData = {
         title: this.createnoteForm.value.title,
         description: this.createnoteForm.value.description,
-        reminder: "2022-08-12T05:06:06.037Z",
-        color: "string",
-        image: "string",
-        isArchived: true,
-        isPinned: true,
-        isDeleted: true,
-        createdAt: "2022-08-12T05:06:06.037Z",
-        editedAt: "2022-08-12T05:06:06.037Z"
+        // reminder: "2022-08-12T05:06:06.037Z",
+         color: "whites",
+        // image: "string",
+        // isArchived: true,
+        // isPinned: true,
+        // isDeleted: true,
+        // createdAt: "2022-08-12T05:06:06.037Z",
+        // editedAt: "2022-08-12T05:06:06.037Z"
 
       }
       this.note.createnotes(reqData).subscribe((response: any) => {
         console.log("Create note successfully", response);
+        this.messageEvent.emit(response);
         localStorage.setItem("token",response.response)
       }, (error: any) => {
         console.log(error);

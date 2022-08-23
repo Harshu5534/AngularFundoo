@@ -1,13 +1,29 @@
-<div  fxLayout="row" fxLayoutAlign="space-between center" style="width: 220px;">
-    <img class="icon"src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg"style="padding-left: 10px;">
-    <img class="icon"src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
-    <img class="icon"src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg">
-    <img class="icon"src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
-    <img class="icon"src="../../../assets/archive_black_24dp.svg">
-    <img class="icon"src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
+<div fxLayout="row" fxLayoutAlign="space-between center" style="width: 220px;">
+    <img class="icon" src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg" style="padding-left: 10px;">
+    <img class="icon" src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg">
+
+    <img [matMenuTriggerFor]="aboveMenu" class="icon"
+        src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg" alt="Colour" />
+    <mat-menu #aboveMenu="matMenu" yPosition="below">
+        <div class="pop">
+            <div *ngFor='let color of colorarray'>
+                <button [style.background]="color.Colorcode" (click)="ColorNote(color.Colorcode)"></button>
+            </div>
+        </div>
+    </mat-menu>
+
+    <img class="icon" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
+    <img class="icon" *ngIf="!isArchieveComponent" (click)="Archivenote()" src="../../../assets/archive_black_24dp.svg">
+
+
+    <img *ngIf="isArchieveComponent" class="icon" matTooltip="Unarchive" (click)="unArchivenote()"
+        src="../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg">
+    <img [matMenuTriggerFor]="menu" class="icon" src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
 </div>
-
-
-
-
-
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="delete()">Delete note</button>
+    <button mat-menu-item>Add drawing</button>
+    <button mat-menu-item>Make a copy</button>
+    <button mat-menu-item>Show checkboxes</button>
+    <button mat-menu-item>Copy to google Docs</button>
+</mat-menu>

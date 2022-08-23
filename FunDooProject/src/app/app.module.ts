@@ -28,10 +28,10 @@ import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.c
 import { IconsComponent } from './Components/icons/icons.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ArchivenotesComponent } from './Components/archivenotes/archivenotes.component';
-import { TrashnotesComponent } from './Components/trashnotes/trashnotes.component';
 import { UpdateComponent } from './Components/update/update.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import {MatMenuModule} from '@angular/material/menu';
+import { SearchfilterPipe } from './Pipes/searchfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -46,8 +46,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     GetAllNotesComponent,
     IconsComponent,
     ArchivenotesComponent,
-    TrashnotesComponent,
-    UpdateComponent
+    UpdateComponent,
+    SearchfilterPipe
     
   ],
   imports: [
@@ -67,7 +67,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     MatCardModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule,
   ],
   providers: [
     AuthService

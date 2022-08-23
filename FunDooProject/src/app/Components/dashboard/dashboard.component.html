@@ -13,7 +13,7 @@
 
     <div class="Searchbar">
       <img style="margin-left: 10px; height: 30px;" src="../../assets/search_black_24dp.svg">
-      <input class="inputSearchbox" type="text" placeholder="Search">
+      <input class="inputSearchbox" type="text"(keyup)="searchTitle($event)" placeholder="Search">
     </div>
 
     <div class="toolBar">
@@ -48,7 +48,7 @@
       <div class="container">
         <mat-nav-list>
           <div class="iconslist">
-            <button mat-button class="sidenav-button">
+            <button mat-button class="sidenav-button"(click)="notes()">
               <img class="sidenav-img" src="../../../assets/lightbulb_black_24dp.svg" alt="">
               Notes
             </button>
@@ -66,13 +66,13 @@
             </button>
           </div>
           <div class="iconslist">
-            <button mat-button class="sidenav-button">
+            <button mat-button class="sidenav-button"(click)="Archive()">
               <img class="sidenav-img" src="../../../assets/archive_black_24dp.svg" alt="">
               Archives
             </button>
           </div>
           <div class="iconslist">
-            <button mat-button class="sidenav-button">
+            <button mat-button class="sidenav-button"(click)="Trash()">
               <img class="sidenav-img" src="../../../assets/delete_black_24dp.svg" alt="">
               Trash
             </button>
