@@ -13,10 +13,10 @@
     </mat-menu>
 
     <img class="icon" src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg">
-    <img class="icon" *ngIf="!isArchieveComponent" (click)="Archivenote()" src="../../../assets/archive_black_24dp.svg">
+    <img class="icon" *ngIf="!isArchieved" (click)="Archivenote()" src="../../../assets/archive_black_24dp.svg">
 
 
-    <img *ngIf="isArchieveComponent" class="icon" matTooltip="Unarchive" (click)="unArchivenote()"
+    <img *ngIf="isArchieved" class="icon" matTooltip="Unarchive" (click)="unArchivenote()"
         src="../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg">
     <img [matMenuTriggerFor]="menu" class="icon" src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg">
 </div>

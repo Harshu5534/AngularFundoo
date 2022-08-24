@@ -21,7 +21,7 @@ export class ArchivenotesComponent implements OnInit {
       this.archiveNotes = response;
       this.archiveNotes.reverse();
       this.archiveNotes=this.archiveNotes.filter((object:any)=>{
-        return object.isArchieveComponent=== true;
+        return object.isArchived=== true;
       })
       this.archiveNotes=this.archiveNotes
       console.log(this.archiveNotes)

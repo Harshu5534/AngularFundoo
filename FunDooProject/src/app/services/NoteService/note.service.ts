@@ -69,16 +69,15 @@ export class NoteService {
     }
     return this.httpService.putservice(`Note/Archive?noteid=`+noteid,{ } ,true, header)
   }
-  ColorNote(data:any,noteid:any,color:any){
+  ColorNote(noteid:any,color:any){
     this.token = localStorage.getItem('token');
-    console.log(noteid);
-  console.log(data);
+    console.log(noteid,color);
     let header = {
       headers: new HttpHeaders({    
         'Content-Type': 'application/json',
         'Authorization' : 'bearer ' + this.token,
       }),
     };
-    return this.httpService.putservice('Note/Color?noteid='+noteid+'&color='+color,data,true, header);
+    return this.httpService.putservice('Note/Color?noteid='+noteid+'&color='+color,{},true, header);
   }
 }

@@ -15,14 +15,10 @@ export class IconsComponent implements OnInit {
   @Output() messageTrashtoDisplay = new EventEmitter<string>();
   noteId: any;
   isDisplayNoteComponent = false;
-  isArchieveComponent = false;
-  colorarray = [{ Colorcode: "red" }, { Colorcode: "pink" }, { Colorcode: "blue" }, { Colorcode: "yellow" },
-  { Colorcode: "purple" }, { Colorcode: "white" }, { Colorcode: "grey" }, { Colorcode: "orange" },
-  { Colorcode: "nevyblue" }, { Colorcode: "brown" }];
-  // colorarray = [{ Colorcode: "#ffffff" }, { Colorcode: "#FF6347" }, { Colorcode: "#FF4500" }, { Colorcode: "#FFFF00" },
-  // { Colorcode: "#ADFF2F" }, { Colorcode: "#43C6DB" }, { Colorcode: "#728FCE" }, { Colorcode: "#2B65EC" },
-  // { Colorcode: "#D16587" }, { Colorcode: "#F9A7B0" }, { Colorcode: "#E2A76F" }, { Colorcode: "#D3D3D3" }, { Colorcode: "#ffff66" },
-  // { Colorcode: "#008040" }, { Colorcode: "#669999" }, { Colorcode: "#ffa64d" }];
+  isArchieved = false;
+  colorarray = [{ Colorcode: "Cyan" }, { Colorcode: "Pink" }, { Colorcode: "OrangeRed" }, { Colorcode: "Yellow" },
+  { Colorcode: "DeepSkyBlue" }, { Colorcode: "MediumVioletRed" }, { Colorcode: "Silver" }, { Colorcode: "Orange" },
+  { Colorcode: "Tomato" }, { Colorcode: "Magenta" },{ Colorcode: "LimeGreen" },{ Colorcode: "RosyBrown" }];
   constructor(private noteservice: NoteService, private snackBar: MatSnackBar, private route: ActivatedRoute) { }
   ngOnInit(): void {
     console.log(this.noteobj)
@@ -33,7 +29,7 @@ export class IconsComponent implements OnInit {
     }
 
     if (comp == ArchivenotesComponent) {
-      this.isArchieveComponent = true;
+      this.isArchieved = true;
     }
 
   }
@@ -75,13 +71,8 @@ export class IconsComponent implements OnInit {
   ColorNote(color: any) {
     // console.log(this.noteobj);
     // this.noteobj.colour = colour;
-    let data = {
-      color: color,
-      noteid: this.noteobj.noteId
-    };
-    console.log(data)
     // console.log('Note is colored');
-    this.noteservice.ColorNote(data, this.noteobj.noteId, color).subscribe((res: any) => {
+    this.noteservice.ColorNote(this.noteobj.noteId, color).subscribe((res: any) => {
       console.log('Color note :', res);
       this.messageTrashtoDisplay.emit(res);
       this.snackBar.open('Color note successfully', '', {

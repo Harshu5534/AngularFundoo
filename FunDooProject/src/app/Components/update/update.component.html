@@ -12,7 +12,7 @@
     </mat-card-subtitle>
 
     <mat-card-content fxlayout="row" fxLayoutAlign="space-between center" fxLayout.xs="row">
-        <app-icons (colornote)="getcolornote($event)"> </app-icons>
+        <app-icons [noteobj]="data"(colornote)="getcolornote($event)"> </app-icons>
         <button class="close" mat-stroked-button (click)="Updatenotes()">close</button>
     </mat-card-content>
 </mat-card>
