@@ -67,7 +67,7 @@ export class NoteService {
       }),
       body: { noteId:noteid }
     }
-    return this.httpService.putservice(`Note/Archive?noteid=`+noteid,{ } ,true, header)
+    return this.httpService.putservice(`Note/`+noteid,{ } ,true, header)
   }
   ColorNote(noteid:any,color:any){
     this.token = localStorage.getItem('token');

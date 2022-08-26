@@ -1,5 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { NoteService } from 'src/app/services/NoteService/note.service';
 
 @Component({
@@ -17,14 +16,13 @@ export class ArchivenotesComponent implements OnInit {
   getArchiveList() {
     this.note.getallnotes().subscribe((response: any) => {
       console.log('All Notes',response);
-
       this.archiveNotes = response;
       this.archiveNotes.reverse();
       this.archiveNotes=this.archiveNotes.filter((object:any)=>{
-        return object.isArchived=== true;
+        return object.isArchived===true;
       })
-      this.archiveNotes=this.archiveNotes
-      console.log(this.archiveNotes)
+      // this.archiveNotes=this.archiveNotes
+      // console.log(this.archiveNotes)
         
       });
     }

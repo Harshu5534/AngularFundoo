@@ -22,7 +22,7 @@ export class GetAllNotesComponent implements OnInit {
       this.NotesList.reverse();
       //console.log(this.NotesList);
       this.NotesList=this.NotesList.filter((object:any)=>{
-        return object.isArchived===false
+        return object.isArchived==false
       })
     });
   }

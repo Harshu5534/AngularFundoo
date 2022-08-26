@@ -34,7 +34,7 @@ export class UpdateComponent implements OnInit {
       title: this.title,
       description: this.description,
       // reminder: "2022-08-16T18:13:51.839Z",
-      color: "blue",
+      color: this.color
       // image: "img.jpeg",
       // isArchived: true,
       // isPinned: true,
